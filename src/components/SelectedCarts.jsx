@@ -21,7 +21,15 @@ const SelectedCarts = () => {
 			selectedCarts: cartData.carts,
 		});
 	};
-
+	const handleDeleteCart = async () => {
+		const deletedElement = await fetch("https://dummyjson.com/carts/1", {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				return e;
+			});
+	};
 	if (carts.selectedCarts) {
 		// console.log(state.data);
 		return (
@@ -30,6 +38,7 @@ const SelectedCarts = () => {
 				{carts.selectedCarts.map((e) => {
 					return (
 						<SingleCart
+							key={e.id}
 							name={`Cart ${e.id}`}
 							id={e.id}
 							deleteItem={handleDeleteCart}
