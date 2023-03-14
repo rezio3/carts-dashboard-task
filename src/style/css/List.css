@@ -5,6 +5,9 @@
 }
 .list-container .list-of-carts {
   width: 48%;
-  height: 800px;
   background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
