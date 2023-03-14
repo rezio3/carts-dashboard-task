@@ -1,8 +1,13 @@
 import React from "react";
-import "../style/css/Cart.css";
+import "../style/css/SingleCart.css";
 
-const Cart = () => {
-	return <div className="cart"></div>;
+const SingleCart = (props) => {
+	return (
+		<div className="cart" data-id={props.id}>
+			<span>{props.name}</span>
+			<button onClick={props.deleteItem}>X</button>
+		</div>
+	);
 };
 
-export default Cart;
+export default SingleCart;
