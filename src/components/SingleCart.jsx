@@ -5,7 +5,9 @@ const SingleCart = (props) => {
 	return (
 		<div className="cart" data-id={props.id}>
 			<span>{props.name}</span>
-			<button onClick={props.deleteItem}>X</button>
+			<button id={props.id} onClick={props.deleteItem}>
+				X
+			</button>
 		</div>
 	);
 };

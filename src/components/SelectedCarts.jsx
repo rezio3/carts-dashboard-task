@@ -4,10 +4,6 @@ import { CartsContext } from "./context/CartsContext";
 
 const SelectedCarts = () => {
 	const [carts, setCarts] = useContext(CartsContext);
-
-	useEffect(() => {
-		getData();
-	}, []);
 	const getData = async () => {
 		let cartData = await fetch("https://dummyjson.com/carts")
 			.then((res) => res.json())
@@ -21,14 +17,45 @@ const SelectedCarts = () => {
 			selectedCarts: cartData.carts,
 		});
 	};
-	const handleDeleteCart = async () => {
-		const deletedElement = await fetch("https://dummyjson.com/carts/1", {
-			method: "DELETE",
-		})
+
+	useEffect(() => {
+		getData();
+	}, []);
+
+	const handleDeleteCart = async (e) => {
+		const deletedElement = await fetch(
+			`https://dummyjson.com/carts/${e.target.id}`,
+			{
+				method: "DELETE",
+			}
+		)
 			.then((res) => res.json())
 			.then((e) => {
 				return e;
 			});
+		carts.selectedCarts.map((el) => {
+			// console.log(el.id);
+			if (el.id === Number(e.target.id)) {
+				const indexToDelete = carts.selectedCarts.indexOf(el);
+				setCarts({
+					...carts,
+					selectedCarts: [carts.selectedCarts.splice(indexToDelete, 1)],
+				});
+			}
+		});
+
+		const updatedArray = [...carts.unselectedCarts, deletedElement];
+
+		console.log(updatedArray);
+
+		const sortedArray = updatedArray.sort(function (a, b) {
+			return a.id - b.id;
+		});
+
+		setCarts({
+			...carts,
+			unselectedCarts: sortedArray,
+		});
 	};
 	if (carts.selectedCarts) {
 		// console.log(state.data);
