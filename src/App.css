@@ -1,0 +1,19 @@
+.app {
+	margin-top: 50px;
+	width: 60vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background-color: #222;
+}
+
+.app .left-content {
+	width: 60%;
+	background-color: aqua;
+}
+.app .right-content {
+	width: 40%;
+	height: 50%;
+	background-color: rgb(236, 85, 110);
+}
