@@ -10,8 +10,6 @@ const SelectedCarts = () => {
 			.then((data) => {
 				return data;
 			});
-		// console.log(cartData.carts.length);
-		// setState(true);
 		setCarts({
 			...carts,
 			selectedCarts: cartData.carts,
@@ -34,7 +32,6 @@ const SelectedCarts = () => {
 				return e;
 			});
 		carts.selectedCarts.map((el) => {
-			// console.log(el.id);
 			if (el.id === Number(e.target.id)) {
 				const indexToDelete = carts.selectedCarts.indexOf(el);
 				setCarts({
@@ -43,22 +40,16 @@ const SelectedCarts = () => {
 				});
 			}
 		});
-
 		const updatedArray = [...carts.unselectedCarts, deletedElement];
-
-		console.log(updatedArray);
-
 		const sortedArray = updatedArray.sort(function (a, b) {
 			return a.id - b.id;
 		});
-
 		setCarts({
 			...carts,
 			unselectedCarts: sortedArray,
 		});
 	};
 	if (carts.selectedCarts) {
-		// console.log(state.data);
 		return (
 			<div className="list-of-carts">
 				<h2>Selected Carts</h2>
@@ -68,7 +59,7 @@ const SelectedCarts = () => {
 							key={e.id}
 							name={`Cart ${e.id}`}
 							id={e.id}
-							deleteItem={handleDeleteCart}
+							cartSwitch={handleDeleteCart}
 						/>
 					);
 				})}
