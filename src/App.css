@@ -7,13 +7,14 @@
 	justify-content: center;
 	align-items: flex-start;
 	background-color: #fff1ca;
+	border-radius: 20px;
 }
 
 .app .left-content {
-	width: 60%;
+	width: 55%;
 }
 .app .right-content {
 	/* background-color: black; */
-	width: 40%;
+	width: 45%;
 	height: 50%;
 }
