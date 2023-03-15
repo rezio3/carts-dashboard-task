@@ -33,7 +33,20 @@ const UnselectedCarts = () => {
 			selectedCarts: sortedArray,
 		});
 	};
-
+	const showChart = (e) => {
+		let newCartOnChart;
+		const numberClicked = Number(e.target.name);
+		carts.unselectedCarts.map((el) => {
+			if (el.id === numberClicked) {
+				newCartOnChart = el;
+			}
+		});
+		console.log(newCartOnChart);
+		setCarts({
+			...carts,
+			cartOnChart: newCartOnChart,
+		});
+	};
 	return (
 		<div className="list-of-carts">
 			<h2>Deleted Carts</h2>
@@ -44,6 +57,7 @@ const UnselectedCarts = () => {
 						name={`Cart ${e.id}`}
 						id={e.id}
 						cartSwitch={handleAddCart}
+						showChart={showChart}
 						list="deleted"
 					/>
 				);

@@ -6,9 +6,6 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 
 const SingleCart = (props) => {
-	const showChart = (e) => {
-		console.log(e.target.id);
-	};
 	return (
 		<div className="cart">
 			<span>{props.name}</span>
@@ -25,7 +22,11 @@ const SingleCart = (props) => {
 						<FontAwesomeIcon icon={faPlus} className="trash-icon" />
 					)}
 				</button>
-				<button name={props.id} onClick={showChart} className="chart-button">
+				<button
+					name={props.id}
+					onClick={props.showChart}
+					className="chart-button"
+				>
 					<FontAwesomeIcon icon={faChartSimple} className="chart-icon" />
 				</button>
 			</div>
