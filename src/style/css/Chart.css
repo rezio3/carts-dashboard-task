@@ -7,7 +7,11 @@
   margin: 10px 10px 0 0;
   border-radius: 20px;
   padding-bottom: 20px;
+  transition: 0.3s;
 }
 .chart-container h2 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.chart-container span {
+  margin-bottom: 10px;
 }

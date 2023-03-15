@@ -6,7 +6,7 @@ const UnselectedCarts = () => {
 	const [carts, setCarts] = useContext(CartsContext);
 	const handleAddCart = async (e) => {
 		const addedElement = await fetch(
-			`https://dummyjson.com/carts/${e.target.id}`
+			`https://dummyjson.com/carts/${e.target.name}`
 		)
 			.then((res) => res.json())
 			.then((e) => {
@@ -14,7 +14,7 @@ const UnselectedCarts = () => {
 			});
 
 		carts.unselectedCarts.map((el) => {
-			if (el.id === Number(e.target.id)) {
+			if (el.id === Number(e.target.name)) {
 				const indexToDelete = carts.unselectedCarts.indexOf(el);
 				setCarts({
 					...carts,
