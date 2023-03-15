@@ -1,0 +1,13 @@
+.chart-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #fff8df;
+	margin: 10px 10px 0 0;
+	border-radius: 20px;
+	padding-bottom: 20px;
+	h2 {
+		margin-bottom: 50px;
+	}
+}

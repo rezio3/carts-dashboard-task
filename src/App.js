@@ -2,6 +2,7 @@ import "./App.css";
 import List from "./components/List";
 import "./App.css";
 import Carts from "./components/context/CartsContext.jsx";
+import Chart from "./components/Chart";
 
 function App() {
 	return (
@@ -10,7 +11,9 @@ function App() {
 				<div className="left-content">
 					<List />
 				</div>
-				<div className="right-content"></div>
+				<div className="right-content">
+					<Chart />
+				</div>
 			</Carts>
 		</div>
 	);
