@@ -6,15 +6,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	background-color: #222;
+	background-color: #fff1ca;
 }
 
 .app .left-content {
 	width: 60%;
-	background-color: aqua;
 }
 .app .right-content {
+	/* background-color: black; */
 	width: 40%;
 	height: 50%;
-	background-color: rgb(236, 85, 110);
 }
