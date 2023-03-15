@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: cartSwitchAnim 0.3s ease-out;
+  animation: cartSwitchAnim 0.4s ease-out;
 }
 .cart span {
   font-weight: bold;
@@ -45,10 +45,10 @@
   bottom: 0;
 }
 .cart .trash-button:hover .trash-icon {
-  color: #555;
+  color: #6e6e6e;
 }
 .cart .chart-button:hover .chart-icon {
-  color: #555;
+  color: #6e6e6e;
 }
 
 .cart:hover .trash-button {
