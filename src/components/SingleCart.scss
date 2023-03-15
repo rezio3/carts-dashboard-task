@@ -2,30 +2,42 @@
 	background-color: #fdf7e7;
 	width: 90%;
 	height: 40px;
-	// margin: 5px 0;
 	border-bottom: 1.5px solid rgb(94, 94, 94);
 	padding: 4px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	animation: cartSwitchAnim 0.3s ease-out;
 
 	span {
 		font-weight: bold;
+		margin-left: 10px;
+	}
+
+	.cart-clickable-area:hover .cart {
+		background-color: #c7bfa9;
+		margin-left: 50px;
 	}
 
 	button {
 		position: relative;
-		display: none;
 		background: none;
 		border: none;
 		cursor: pointer;
 
-		.icon {
-			display: block;
+		.trash-icon {
 			height: 20px;
 			width: 20px;
 			padding: 10px;
 		}
+		.chart-icon {
+			height: 20px;
+			width: 20px;
+			padding: 10px;
+		}
+	}
+	.trash-button {
+		visibility: hidden;
 	}
 
 	button::before {
@@ -36,11 +48,23 @@
 		right: 0;
 		bottom: 0;
 	}
-	button:hover .icon {
+	.trash-button:hover .trash-icon {
+		color: #555;
+	}
+	.chart-button:hover .chart-icon {
 		color: #555;
 	}
 }
 
-.cart:hover button {
-	display: block;
+.cart:hover .trash-button {
+	visibility: visible;
+}
+
+@keyframes cartSwitchAnim {
+	from {
+		background-color: #76f35d;
+	}
+	to {
+		background-color: #fdf7e7;
+	}
 }
