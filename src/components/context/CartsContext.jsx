@@ -1,6 +1,10 @@
 import React, { createContext, useState } from "react";
 
-const cartsData = { selectedCarts: null, unselectedCarts: [] };
+const cartsData = {
+	selectedCarts: null,
+	unselectedCarts: [],
+	cartOnChart: null,
+};
 
 export const CartsContext = createContext();
 

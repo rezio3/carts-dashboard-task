@@ -13,6 +13,7 @@ const SelectedCarts = () => {
 		setCarts({
 			...carts,
 			selectedCarts: cartData.carts,
+			cartOnChart: cartData.carts[0],
 		});
 	};
 
@@ -22,7 +23,7 @@ const SelectedCarts = () => {
 
 	const handleDeleteCart = async (e) => {
 		const deletedElement = await fetch(
-			`https://dummyjson.com/carts/${e.target.id}`,
+			`https://dummyjson.com/carts/${e.target.name}`,
 			{
 				method: "DELETE",
 			}
@@ -32,7 +33,7 @@ const SelectedCarts = () => {
 				return e;
 			});
 		carts.selectedCarts.map((el) => {
-			if (el.id === Number(e.target.id)) {
+			if (el.id === Number(e.target.name)) {
 				const indexToDelete = carts.selectedCarts.indexOf(el);
 				setCarts({
 					...carts,
