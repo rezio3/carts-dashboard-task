@@ -15,8 +15,6 @@ const Chart = () => {
 	let data;
 	if (carts.cartOnChart) {
 		const { products } = carts.cartOnChart;
-
-		console.log(products);
 		const p = (i) => {
 			return products[i].price;
 		};

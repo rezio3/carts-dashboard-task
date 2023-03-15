@@ -58,7 +58,6 @@ const SelectedCarts = () => {
 				newCartOnChart = el;
 			}
 		});
-		console.log(newCartOnChart);
 		setCarts({
 			...carts,
 			cartOnChart: newCartOnChart,
