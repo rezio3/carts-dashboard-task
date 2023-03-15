@@ -36,7 +36,7 @@ const UnselectedCarts = () => {
 
 	return (
 		<div className="list-of-carts">
-			<h2>Unselected Carts</h2>
+			<h2>Deleted Carts</h2>
 			{carts.unselectedCarts.map((e) => {
 				return (
 					<SingleCart
@@ -44,6 +44,7 @@ const UnselectedCarts = () => {
 						name={`Cart ${e.id}`}
 						id={e.id}
 						cartSwitch={handleAddCart}
+						list="deleted"
 					/>
 				);
 			})}

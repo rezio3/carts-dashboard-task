@@ -52,7 +52,7 @@ const SelectedCarts = () => {
 	if (carts.selectedCarts) {
 		return (
 			<div className="list-of-carts">
-				<h2>Selected Carts</h2>
+				<h2>Added Carts</h2>
 				{carts.selectedCarts.map((e) => {
 					return (
 						<SingleCart
@@ -60,6 +60,7 @@ const SelectedCarts = () => {
 							name={`Cart ${e.id}`}
 							id={e.id}
 							cartSwitch={handleDeleteCart}
+							list="added"
 						/>
 					);
 				})}
@@ -68,7 +69,7 @@ const SelectedCarts = () => {
 	} else {
 		return (
 			<div className="list-of-carts">
-				<h2>Selected Carts</h2>
+				<h2>Added Carts</h2>
 				<p>Loading...</p>
 			</div>
 		);
