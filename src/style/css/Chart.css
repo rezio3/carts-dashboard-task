@@ -15,3 +15,12 @@
 .chart-container span {
   margin-bottom: 10px;
 }
+.chart-container tspan {
+  font-size: 12px;
+}
+.chart-container .recharts-tooltip-wrapper p {
+  font-size: 12px;
+}
+.chart-container .recharts-tooltip-wrapper ul {
+  font-size: 12px;
+}
