@@ -8,21 +8,23 @@ import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 const SingleCart = (props) => {
 	return (
 		<div className="cart">
-			<span>{props.name}</span>
+			<span data-testid="span">{props.name}</span>
 
 			<div className="buttons-container">
 				<button
+					data-testid="switch-button"
 					name={props.id}
 					onClick={props.cartSwitch}
-					className="trash-button"
+					className="switch-button"
 				>
 					{props.list === "added" ? (
-						<FontAwesomeIcon icon={faTrash} className="trash-icon" />
+						<FontAwesomeIcon icon={faTrash} className="switch-icon" />
 					) : (
-						<FontAwesomeIcon icon={faPlus} className="trash-icon" />
+						<FontAwesomeIcon icon={faPlus} className="switch-icon" />
 					)}
 				</button>
 				<button
+					data-testid="chart-button"
 					name={props.id}
 					onClick={props.showChart}
 					className="chart-button"
