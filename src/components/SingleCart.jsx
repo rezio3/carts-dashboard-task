@@ -8,7 +8,7 @@ import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 const SingleCart = (props) => {
 	return (
 		<div className="cart">
-			<span data-testid="span">{props.name}</span>
+			<span data-testid="Cart 1">{props.name}</span>
 
 			<div className="buttons-container">
 				<button
