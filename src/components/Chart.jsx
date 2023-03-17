@@ -32,7 +32,7 @@ const Chart = () => {
 
 	return (
 		<div className="chart-container">
-			<h2>Chart</h2>
+			<h2 data-testid="chart-header">Chart</h2>
 
 			{carts.cartOnChart ? (
 				<>
