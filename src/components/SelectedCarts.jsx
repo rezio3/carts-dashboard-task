@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import SingleCart from "./SingleCart";
 import { CartsContext } from "./context/CartsContext";
-import { getData, showChart, deleteCart } from "./functions/actions";
+import { getData, deleteCart } from "./functions/actions";
 
 const SelectedCarts = () => {
 	const [carts, setCarts] = useContext(CartsContext);
