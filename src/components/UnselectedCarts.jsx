@@ -25,7 +25,7 @@ const UnselectedCarts = () => {
 	};
 	return (
 		<div className="list-of-carts">
-			<h2>Deleted Carts</h2>
+			<h2 data-testid="deleted-header">Deleted Carts</h2>
 			{carts.unselectedCarts.map((e) => {
 				return (
 					<SingleCart

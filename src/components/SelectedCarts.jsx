@@ -47,9 +47,9 @@ const SelectedCarts = () => {
 		);
 	} else {
 		return (
-			<div className="list-of-carts">
-				<h2>Added Carts</h2>
-				<p>Loading...</p>
+			<div className="list-of-carts" data-testid="cart-list">
+				<h2 data-testid="added-header">Added Carts</h2>
+				<span data-testid="loading">Loading...</span>
 			</div>
 		);
 	}
