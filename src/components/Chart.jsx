@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "../style/css/Chart.css";
 import {
 	LineChart,
@@ -22,11 +22,11 @@ const Chart = () => {
 			return products[i].discountedPrice / products[i].quantity;
 		};
 		data = [
-			{ name: "product 1", uv: p(0), pv: dP(0), amt: 2400 },
-			{ name: "product 2", uv: p(1), pv: dP(1), amt: 2100 },
-			{ name: "product 3", uv: p(2), pv: dP(2), amt: 2000 },
-			{ name: "product 4", uv: p(3), pv: dP(3), amt: 2550 },
-			{ name: "product 5", uv: p(4), pv: dP(4), amt: 2800 },
+			{ name: "product 1", price: p(0), discounted: dP(0) },
+			{ name: "product 2", price: p(1), discounted: dP(1) },
+			{ name: "product 3", price: p(2), discounted: dP(2) },
+			{ name: "product 4", price: p(3), discounted: dP(3) },
+			{ name: "product 5", price: p(4), discounted: dP(4) },
 		];
 	}
 
@@ -47,8 +47,8 @@ const Chart = () => {
 						<XAxis dataKey="name" />
 						<YAxis />
 						<Tooltip />
-						<Line type="monotone" dataKey="uv" stroke="#8884d8" />
-						<Line type="monotone" dataKey="pv" stroke="#dd84d8" />
+						<Line type="monotone" dataKey="price" stroke="#8884d8" />
+						<Line type="monotone" dataKey="discounted" stroke="#dd84d8" />
 					</LineChart>
 				</>
 			) : null}
