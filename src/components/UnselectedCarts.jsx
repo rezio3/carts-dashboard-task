@@ -1,38 +1,15 @@
 import React, { useContext } from "react";
 import { CartsContext } from "./context/CartsContext";
+import { addCart } from "./functions/actions";
 import SingleCart from "./SingleCart";
 
 const UnselectedCarts = () => {
 	const [carts, setCarts] = useContext(CartsContext);
-	const handleAddCart = async (e) => {
-		const addedElement = await fetch(
-			`https://dummyjson.com/carts/${e.target.name}`
-		)
-			.then((res) => res.json())
-			.then((e) => {
-				return e;
-			});
 
-		carts.unselectedCarts.map((el) => {
-			if (el.id === Number(e.target.name)) {
-				const indexToDelete = carts.unselectedCarts.indexOf(el);
-				setCarts({
-					...carts,
-					unselectedCarts: [carts.unselectedCarts.splice(indexToDelete, 1)],
-				});
-				return el;
-			}
-		});
-
-		const updatedArray = [...carts.selectedCarts, addedElement];
-		const sortedArray = updatedArray.sort(function (a, b) {
-			return a.id - b.id;
-		});
-		setCarts({
-			...carts,
-			selectedCarts: sortedArray,
-		});
+	const handleAddCart = (e) => {
+		addCart({ e, carts, setCarts });
 	};
+
 	const showChart = (e) => {
 		let newCartOnChart;
 		const numberClicked = Number(e.target.name);

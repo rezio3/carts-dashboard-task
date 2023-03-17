@@ -1,55 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import SingleCart from "./SingleCart";
 import { CartsContext } from "./context/CartsContext";
+import { getData, showChart, deleteCart } from "./functions/actions";
 
 const SelectedCarts = () => {
 	const [carts, setCarts] = useContext(CartsContext);
-	const getData = async () => {
-		let cartData = await fetch("https://dummyjson.com/carts")
-			.then((res) => res.json())
-			.then((data) => {
-				return data;
-			});
-		setCarts({
-			...carts,
-			selectedCarts: cartData.carts,
-			cartOnChart: cartData.carts[0],
-		});
-	};
 
 	useEffect(() => {
-		getData();
+		getData({ carts, setCarts });
 	}, []);
 
-	const handleDeleteCart = async (e) => {
-		const deletedElement = await fetch(
-			`https://dummyjson.com/carts/${e.target.name}`,
-			{
-				method: "DELETE",
-			}
-		)
-			.then((res) => res.json())
-			.then((e) => {
-				return e;
-			});
-		carts.selectedCarts.map((el) => {
-			if (el.id === Number(e.target.name)) {
-				const indexToDelete = carts.selectedCarts.indexOf(el);
-				setCarts({
-					...carts,
-					selectedCarts: [carts.selectedCarts.splice(indexToDelete, 1)],
-				});
-			}
-		});
-		const updatedArray = [...carts.unselectedCarts, deletedElement];
-		const sortedArray = updatedArray.sort(function (a, b) {
-			return a.id - b.id;
-		});
-		setCarts({
-			...carts,
-			unselectedCarts: sortedArray,
-		});
+	const handleDeleteCart = (e) => {
+		deleteCart({ e, carts, setCarts });
 	};
+
 	const showChart = (e) => {
 		let newCartOnChart;
 		const numberClicked = Number(e.target.name);
