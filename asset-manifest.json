@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/carts-dashboard-task/static/css/main.75538799.css",
+    "main.js": "/carts-dashboard-task/static/js/main.4cb95b62.js",
+    "index.html": "/carts-dashboard-task/index.html",
+    "main.75538799.css.map": "/carts-dashboard-task/static/css/main.75538799.css.map",
+    "main.4cb95b62.js.map": "/carts-dashboard-task/static/js/main.4cb95b62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75538799.css",
+    "static/js/main.4cb95b62.js"
+  ]
+}
